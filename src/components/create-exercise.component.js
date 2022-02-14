@@ -32,6 +32,9 @@ export default class CreateExercises extends Component {
                 })
             }
         })
+        .catch((error) => {
+            console.log(error);
+          })
     }
 
     onChangeUsername(e) {
@@ -68,12 +71,12 @@ export default class CreateExercises extends Component {
             date: this.state.date
         }
 
-        console.log(exercise)
+        console.log(exercise);
 
         axios.post('http://localhost:5000/exercises/add', exercise)
         .then(res => console.log(res.data))
 
-        // window.location = '/';
+        window.location = '/';
     }
 
     render() {
